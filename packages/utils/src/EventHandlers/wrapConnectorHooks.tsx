@@ -19,7 +19,7 @@ export function cloneWithRef(
   element: any,
   newRef: any
 ): React.ReactElement<any> {
-  const previousRef = element.props.ref;
+  const previousRef = element.props.ref || element.ref;
   invariant(
     typeof previousRef !== 'string',
     'Cannot connect to an element with an existing string ref. ' +
